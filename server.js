@@ -12,7 +12,9 @@ app.use(logger);
 app.use('/auth', rutaAuth);
 app.use('/peliculas', validarToken, rutaPeliculas);
 
-
+app.get('/', (req, res) => {
+  res.send('Esta es la API de peliculas funcionando en Render omaiga');
+});
 
 sequelize.sync({ force: false })
   .then(() => {
